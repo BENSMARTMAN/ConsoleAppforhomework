@@ -86,8 +86,14 @@ class Program
             }
         });
 
-        // 使用 ShowInPreviewer 預覽
-        document.ShowInPreviewer();
+        // 定義要儲存的PDF檔案路徑
+        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Calendar2025.pdf");
+
+        // 儲存PDF到檔案
+        document.GeneratePdf(filePath);
+
+        // 告知已儲存
+        Console.WriteLine($"PDF has been saved at {filePath}");
     }
 
     // 獲取月份名稱
